@@ -12,21 +12,21 @@ Sistema de gerenciamento de eventos.
 Veja a documentação em `/docs`.
 ##execução fronted
 
-# Instalar dependências
+## Instalar dependências
 
-npm install
-Iniciar o frontend
-npm start
+-npm install
+-Iniciar o frontend
+-npm start
 
 ## Criar ambiente virtual
 
-python3 -m venv venv
-source venv/bin/activate
+-python3 -m venv venv
+-source venv/bin/activate
 
-# Instalar dependências
-pip install -r requirements.txt
+## Instalar dependências
+-pip install -r requirements.txt
 
-# Executar
-python server.py
+## Executar
+-python server.py
 
 
