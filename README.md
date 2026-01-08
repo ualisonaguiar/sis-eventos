@@ -9,23 +9,23 @@ Sistema de gerenciamento de eventos.
 - docs/: documentação do projeto
 - scripts/: automações
 - config/: variáveis de ambiente
-Veja a documentação em `/docs`.
+- Veja a documentação em `/docs`.
 
 ## Instalar dependências do frontend
 
--npm install
--Iniciar o frontend
--npm start
+- npm install
+## Iniciar o frontend
+- npm start
 
 ## Criar ambiente virtual do python
 
--python3 -m venv venv
--source venv/bin/activate
+- python3 -m venv venv
+- source venv/bin/activate
 
 ## Instalar dependências
--pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ## Executar
--python server.py
+- python server.py
 
 
