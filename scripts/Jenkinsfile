@@ -2,10 +2,45 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
-                echo "Deploy branch: $BRANCH"
+                echo 'Buildando aplicação...'
+            }
+        }
+
+        stage('Deploy - Desenvolvimento') {
+            steps {
+                script {
+                    input(
+                        message: 'Confirmar deploy em DESENVOLVIMENTO?',
+                        ok: 'Deploy DEV'
+                    )
+                }
+                echo 'Deploy em Desenvolvimento...'
+            }
+        }
+
+        stage('Deploy - Homologação') {
+            steps {
+                script {
+                    input(
+                        message: 'Confirmar deploy em HOMOLOGAÇÃO?',
+                        ok: 'Deploy HML'
+                    )
+                }
+                echo 'Deploy em Homologação...'
+            }
+        }
+
+        stage('Deploy - Produção') {
+            steps {
+                script {
+                    input(
+                        message: 'Confirmar deploy em PRODUÇÃO?',
+                        ok: 'Deploy PROD'
+                    )
+                }
+                echo 'Deploy em Produção...'
             }
         }
     }
