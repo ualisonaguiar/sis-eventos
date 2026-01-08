@@ -7,15 +7,18 @@ pipeline {
     }
 
     stages {
-                
-        stage('SonarQube - Backend Node.js') {
-            steps {
-                dir('scripts') {
-                    withSonarQubeEnv("${SONARQUBE_ENV}") {
-                        sh """
-                        ${SONAR_SCANNER} \
-                        -Dproject.settings=sonar-project.properties
-                        """
+        stage('SonarQube Analysis') {
+            parallel {
+                stage('SonarQube - Backend NodeJs') {
+                    steps {
+                        dir('scripts') {
+                            withSonarQubeEnv("${SONARQUBE_ENV}") {
+                                sh """
+                                ${SONAR_SCANNER}/bin/sonar-scanner \
+                                -Dproject.settings=sonar-project.properties
+                                """
+                            }
+                        }
                     }
                 }
             }
