@@ -10,15 +10,14 @@ Sistema de gerenciamento de eventos.
 - scripts/: automações
 - config/: variáveis de ambiente
 Veja a documentação em `/docs`.
-##execução fronted
 
-## Instalar dependências
+## Instalar dependências do frontend
 
 -npm install
 -Iniciar o frontend
 -npm start
 
-## Criar ambiente virtual
+## Criar ambiente virtual do python
 
 -python3 -m venv venv
 -source venv/bin/activate
