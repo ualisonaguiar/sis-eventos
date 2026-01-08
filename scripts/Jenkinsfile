@@ -1,45 +1,33 @@
 pipeline {
     agent any
-
     stages {
+
         stage('Build') {
             steps {
-                echo 'Buildando aplicação...'
+                echo 'Building the application...'
             }
         }
 
-        stage('Deploy - Desenvolvimento') {
+        stage('Desenvolvimento') {
             steps {
-                script {
-                    input(
-                        message: 'Confirmar deploy em DESENVOLVIMENTO?',
-                        ok: 'Deploy DEV'
-                    )
-                }
+                input message: 'Confirmar deploy em DESENVOLVIMENTO?', ok: 'OK'
+                sh 'mkdir -p /tmp/Desenvolvimento'
                 echo 'Deploy em Desenvolvimento...'
             }
         }
 
-        stage('Deploy - Homologação') {
+        stage('Homologação') {
             steps {
-                script {
-                    input(
-                        message: 'Confirmar deploy em HOMOLOGAÇÃO?',
-                        ok: 'Deploy HML'
-                    )
-                }
+                input message: 'Confirmar deploy em HOMOLOGAÇÃO?', ok: 'OK'
+                sh 'mkdir -p /tmp/Homologacao'
                 echo 'Deploy em Homologação...'
             }
         }
 
-        stage('Deploy - Produção') {
+        stage('Produção') {
             steps {
-                script {
-                    input(
-                        message: 'Confirmar deploy em PRODUÇÃO?',
-                        ok: 'Deploy PROD'
-                    )
-                }
+                input message: 'Confirmar deploy em PRODUÇÃO?', ok: 'OK'
+                sh 'mkdir -p /tmp/Producao'
                 echo 'Deploy em Produção...'
             }
         }
