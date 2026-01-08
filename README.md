@@ -15,9 +15,8 @@ Veja a documentação em `/docs`.
 # Instalar dependências
 
 npm install
-#Iniciar o frontend
+Iniciar o frontend
 npm start
-#Execução python
 
 ## Criar ambiente virtual
 
