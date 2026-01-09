@@ -4,7 +4,7 @@ Sistema de gerenciamento de eventos.
 
 ## Estrutura
 - frontend/: aplicação React
-- backend-node/: backend em Node.js
+
 - backend-python/: backend em Python
 - docs/: documentação do projeto
 - scripts/: automações
@@ -16,7 +16,7 @@ Sistema de gerenciamento de eventos.
 - npm install
 ## Iniciar o frontend
 - npm start
-
+- Abrir automaticamente no navegador em http://localhost:3000
 ## Criar ambiente virtual do python
 
 - python3 -m venv venv
