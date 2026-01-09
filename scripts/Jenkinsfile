@@ -1,12 +1,34 @@
 pipeline {
     agent any
+
+    environment {
+        SONAR_SCANNER = tool 'sonar-scanner'
+        SONARQUBE_ENV = 'SonarQube'
+    }
+
     stages {
+        stage('SonarQube Analysis') {
+            parallel {
+                stage('SonarQube - Backend NodeJs') {
+                    steps {
+                        dir('scripts') {
+                            withSonarQubeEnv("${SONARQUBE_ENV}") {
+                                sh """
+                                ${SONAR_SCANNER}/bin/sonar-scanner \
+                                -Dproject.settings=sonar-project.properties
+                                """
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         stage('Build') {
             steps {
                 echo 'Building the application...'
             }
-        }
+        }        
 
         stage('Desenvolvimento') {
             steps {
