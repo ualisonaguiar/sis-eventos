@@ -1,0 +1,10 @@
+# Dependências do backend Python/Flask
+# Instale com: pip install -r requirements.txt
+
+Flask==3.0.0
+Flask-CORS==4.0.0
+Werkzeug==3.0.1
+
+# Opcional para produção
+gunicorn==21.2.0
+python-dotenv==1.0.0
